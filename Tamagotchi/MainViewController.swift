@@ -14,13 +14,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let flowLayout = UICollectionViewFlowLayout()
-    
+    let images: [UIImage] = [UIImage(named: "1-6")!, UIImage(named: "2-6")!, UIImage(named: "3-6")!]
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        collectionView.delegate = self
         setupCollectionView()
         selectLabel.text = "다마고치 선택하기"
         selectLabel.textAlignment = .center
@@ -68,7 +69,26 @@ class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedImage = images[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let alertVC = storyboard.instantiateViewController(identifier: "AlertViewController") as? AlertViewController {
+            alertVC.alertImage = selectedImage
+            navigationController?.pushViewController(alertVC, animated: true)
+        }
+        
+        let alertStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let alertVC = alertStoryboard.instantiateViewController(identifier: "AlertViewController") as? AlertViewController {
+            alertVC.alertImage = selectedImage
+            
+            present(alertVC, animated: true, completion: nil)
+            
+        }
+    }
+        
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 21    }
