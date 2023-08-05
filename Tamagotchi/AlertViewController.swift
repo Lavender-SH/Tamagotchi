@@ -37,6 +37,9 @@ class AlertViewController: UIViewController {
         } else {
             sender.backgroundColor = UIColor.white
         }
+        
+        dismiss(animated: true, completion: nil)
+        
     }
     
     
@@ -47,6 +50,10 @@ class AlertViewController: UIViewController {
         } else {
             sender.backgroundColor = UIColor.white
         }
+        
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailVC.modalPresentationStyle = .fullScreen
+        present(detailVC, animated: true, completion: nil)
     }
     
 

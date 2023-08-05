@@ -16,6 +16,9 @@
 		02F4CE842A7CC370001018DF /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE832A7CC370001018DF /* MainCollectionViewCell.swift */; };
 		02F4CE862A7CC602001018DF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE852A7CC602001018DF /* MainViewController.swift */; };
 		02F4CE882A7D20B6001018DF /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE872A7D20B6001018DF /* AlertViewController.swift */; };
+		02F4CE8A2A7E0D3D001018DF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE892A7E0D3D001018DF /* DetailViewController.swift */; };
+		02F4CE8C2A7E1C39001018DF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE8B2A7E1C39001018DF /* SettingViewController.swift */; };
+		02F4CE8E2A7E28E4001018DF /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE8D2A7E28E4001018DF /* settingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		02F4CE832A7CC370001018DF /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		02F4CE852A7CC602001018DF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		02F4CE872A7D20B6001018DF /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		02F4CE892A7E0D3D001018DF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		02F4CE8B2A7E1C39001018DF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		02F4CE8D2A7E28E4001018DF /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				02F4CE712A7CB9A9001018DF /* SceneDelegate.swift */,
 				02F4CE732A7CB9A9001018DF /* ViewController.swift */,
 				02F4CE752A7CB9A9001018DF /* Main.storyboard */,
+				02F4CE8D2A7E28E4001018DF /* settingTableViewCell.swift */,
+				02F4CE8B2A7E1C39001018DF /* SettingViewController.swift */,
+				02F4CE892A7E0D3D001018DF /* DetailViewController.swift */,
 				02F4CE872A7D20B6001018DF /* AlertViewController.swift */,
 				02F4CE852A7CC602001018DF /* MainViewController.swift */,
 				02F4CE832A7CC370001018DF /* MainCollectionViewCell.swift */,
@@ -150,9 +159,12 @@
 				02F4CE742A7CB9A9001018DF /* ViewController.swift in Sources */,
 				02F4CE702A7CB9A9001018DF /* AppDelegate.swift in Sources */,
 				02F4CE722A7CB9A9001018DF /* SceneDelegate.swift in Sources */,
+				02F4CE8C2A7E1C39001018DF /* SettingViewController.swift in Sources */,
 				02F4CE882A7D20B6001018DF /* AlertViewController.swift in Sources */,
+				02F4CE8E2A7E28E4001018DF /* settingTableViewCell.swift in Sources */,
 				02F4CE842A7CC370001018DF /* MainCollectionViewCell.swift in Sources */,
 				02F4CE862A7CC602001018DF /* MainViewController.swift in Sources */,
+				02F4CE8A2A7E0D3D001018DF /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
