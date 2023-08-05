@@ -53,10 +53,28 @@ class AlertViewController: UIViewController {
         
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailVC.modalPresentationStyle = .fullScreen
+        detailVC.modalPresentationStyle = .overCurrentContext
         present(detailVC, animated: true, completion: nil)
-    }
+        
+        let alertVC = storyboard?.instantiateViewController(withIdentifier: "AlertViewController") as! AlertViewController
+        
+        let nav = UINavigationController(rootViewController: alertVC)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
+        }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: animated)
+//    }
+    
+}
     
 
 
 
-}
+

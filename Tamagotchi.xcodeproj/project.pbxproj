@@ -19,6 +19,7 @@
 		02F4CE8A2A7E0D3D001018DF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE892A7E0D3D001018DF /* DetailViewController.swift */; };
 		02F4CE8C2A7E1C39001018DF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE8B2A7E1C39001018DF /* SettingViewController.swift */; };
 		02F4CE8E2A7E28E4001018DF /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE8D2A7E28E4001018DF /* settingTableViewCell.swift */; };
+		02F4CE902A7E90AE001018DF /* nicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE8F2A7E90AE001018DF /* nicknameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		02F4CE892A7E0D3D001018DF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		02F4CE8B2A7E1C39001018DF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		02F4CE8D2A7E28E4001018DF /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
+		02F4CE8F2A7E90AE001018DF /* nicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				02F4CE712A7CB9A9001018DF /* SceneDelegate.swift */,
 				02F4CE732A7CB9A9001018DF /* ViewController.swift */,
 				02F4CE752A7CB9A9001018DF /* Main.storyboard */,
+				02F4CE8F2A7E90AE001018DF /* nicknameViewController.swift */,
 				02F4CE8D2A7E28E4001018DF /* settingTableViewCell.swift */,
 				02F4CE8B2A7E1C39001018DF /* SettingViewController.swift */,
 				02F4CE892A7E0D3D001018DF /* DetailViewController.swift */,
@@ -160,6 +163,7 @@
 				02F4CE702A7CB9A9001018DF /* AppDelegate.swift in Sources */,
 				02F4CE722A7CB9A9001018DF /* SceneDelegate.swift in Sources */,
 				02F4CE8C2A7E1C39001018DF /* SettingViewController.swift in Sources */,
+				02F4CE902A7E90AE001018DF /* nicknameViewController.swift in Sources */,
 				02F4CE882A7D20B6001018DF /* AlertViewController.swift in Sources */,
 				02F4CE8E2A7E28E4001018DF /* settingTableViewCell.swift in Sources */,
 				02F4CE842A7CC370001018DF /* MainCollectionViewCell.swift in Sources */,

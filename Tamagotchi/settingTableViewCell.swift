@@ -15,15 +15,18 @@ class settingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var settingLabel: UILabel!
     var detailSettingLabel: String?
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         iconImage?.image = detailIconImage
         settingLabel.text = detailSettingLabel
+        settingLabel.frame.origin.x = 30
+        
+
         
     }
     
-
-    }
+    
+}
 

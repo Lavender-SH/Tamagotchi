@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     let flowLayout = UICollectionViewFlowLayout()
     let images: [UIImage] = [UIImage(named: "1-6")!, UIImage(named: "2-6")!, UIImage(named: "3-6")!]
+    var selctContentLabel: String? = "다마고치 선택하기"
     
     
     
@@ -27,6 +28,9 @@ class MainViewController: UIViewController {
         selectLabel.textAlignment = .center
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         collectionView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        
+        
+        selectLabel.text = selctContentLabel
 
         
     }
