@@ -130,7 +130,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1B5-AL-2Z3">
-                                        <rect key="frame" x="20" y="232.33333333333329" width="257" height="112.66666666666666"/>
+                                        <rect key="frame" x="20" y="232.33333333333329" width="257" height="123.66666666666666"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -138,25 +138,43 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-6g-7WQ">
-                                        <rect key="frame" x="0.0" y="384" width="149" height="35"/>
+                                        <rect key="frame" x="0.0" y="376" width="149" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="149" id="ZOu-w0-gpP"/>
                                         </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="취소">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name=".AppleSDGothicNeoI-Regular"/>
+                                                        <font key="NSOriginalFont" metaFont="system" size="24"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="cancelButton:" destination="05f-iH-DKd" eventType="touchUpInside" id="6Th-zP-K99"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-2t-lvV">
-                                        <rect key="frame" x="148" y="384" width="149" height="35"/>
+                                        <rect key="frame" x="148" y="376" width="149" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="149" id="idu-1b-OhT"/>
                                         </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="시작하기"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="시작하기">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="AppleSDGothicNeo-Regular"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="startButton:" destination="05f-iH-DKd" eventType="touchUpInside" id="nXb-iw-HGG"/>
                                         </connections>
@@ -164,11 +182,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="kmK-6g-7WQ" firstAttribute="top" secondItem="1B5-AL-2Z3" secondAttribute="bottom" constant="39" id="DR0-YN-BDQ"/>
+                                    <constraint firstItem="kmK-6g-7WQ" firstAttribute="top" secondItem="1B5-AL-2Z3" secondAttribute="bottom" constant="20" id="DR0-YN-BDQ"/>
                                     <constraint firstAttribute="trailing" secondItem="dhF-9G-vNg" secondAttribute="trailing" constant="70" id="FP8-af-Dy3"/>
                                     <constraint firstItem="1B5-AL-2Z3" firstAttribute="leading" secondItem="zuh-Jl-04a" secondAttribute="leading" constant="20" id="GoO-Kw-IFz"/>
                                     <constraint firstItem="dhF-9G-vNg" firstAttribute="leading" secondItem="zuh-Jl-04a" secondAttribute="leading" constant="70" id="JK0-mr-r3b"/>
                                     <constraint firstItem="dhF-9G-vNg" firstAttribute="centerX" secondItem="zuh-Jl-04a" secondAttribute="centerX" id="Jsv-j5-ed2"/>
+                                    <constraint firstItem="Fit-2t-lvV" firstAttribute="top" secondItem="1B5-AL-2Z3" secondAttribute="bottom" constant="20" id="Pkf-JK-LSK"/>
                                     <constraint firstItem="dqc-Mp-Atl" firstAttribute="top" secondItem="dhF-9G-vNg" secondAttribute="bottom" constant="5" id="QGp-oD-zFZ"/>
                                     <constraint firstAttribute="trailing" secondItem="dqc-Mp-Atl" secondAttribute="trailing" constant="70" id="Scd-Ag-F5q"/>
                                     <constraint firstAttribute="trailing" secondItem="1B5-AL-2Z3" secondAttribute="trailing" constant="20" id="TbA-Oz-bzr"/>
