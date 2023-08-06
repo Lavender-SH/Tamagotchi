@@ -26,7 +26,7 @@ class AlertViewController: UIViewController {
         alertImage?.image = alertDetailImage
         alertLabel.text = contentLabel
         alertTextView.text = contentText
-        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        
     }
     
     

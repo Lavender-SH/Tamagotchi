@@ -106,11 +106,17 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             alertVC.alertDetailImage = selectedImage
             alertVC.contentLabel = selectedLabel
             alertVC.contentText = selectedText
-            
             present(alertVC, animated: true, completion: nil)
         }
         
+        let detailStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let detailVC = (detailStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController) {
+            detailVC.selectedTamaName = selectedLabel
+            present(detailVC, animated: true, completion: nil)
+        }
     }
+        
+    
         
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
