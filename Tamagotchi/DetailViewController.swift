@@ -22,7 +22,8 @@ class DetailViewController: UIViewController {
     let foodStrings = ["오늘은 왠지 기분이 좋아용", "대장님 오늘 과제 하셨어용?", "대장님 오늘 깃허브 푸시 하셨어영?", "배고파요 ㅠㅠ 밥 먹고 싶어요", "목말라요~~~", "복습 아직 안하셨다구요? 지금 잠이 오세요? 고래밥님??", "토할거가타요 ㅠㅁㅠ"]
     let waterStrings = ["오늘은 왠지 기분이 좋아용", "대장님 오늘 과제 하셨어용?", "대장님 오늘 깃허브 푸시 하셨어영?", "배고파요 ㅠㅠ 밥 먹고 싶어요", "목말라요~~~", "복습 아직 안하셨다구요? 지금 잠이 오세요? 고래밥님??", "토할거가타요 ㅠㅁㅠ"]
     
-    var selectedTamaName: String?
+    var selectedTamaName: String? = "빈 공간"
+    var selectedTamaImage: UIImage?
     
     var riceBallCount = 0
     var waterDropCount = 0
@@ -36,11 +37,24 @@ class DetailViewController: UIViewController {
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         tamagotchiImageView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         bubbleImage.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        tamagotchiImageView.image = UIImage(named: "1-1")
+        tamagotchiImageView.image = selectedTamaImage
         tamaNameLabel.text = selectedTamaName
+        //tamagotchiImageView.image = UIImage(named: "1-1")
+        //tamaNameLabel.text = "따끔따끔 다마고치"
         levelLabel.text = "LV1 밥알 0개 물방울 0개"
+        bubbleLabel.text = "오늘은 왠지 기분이 좋아용"
+        tamaNameLabel.layer.borderWidth = 1.0
+        tamaNameLabel.layer.borderColor = UIColor.lightGray.cgColor
+        tamaNameLabel.layer.cornerRadius = 5.0
+        //selectedCall()
+        
         
     }
+//    func selectedCall() {
+//        let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+//        let alertVC = storyboard?.instantiateViewController(withIdentifier: "AlertViewController") as! AlertViewController
+//        tamaNameLabel.text = alertVC.contentLabel
+//    }
     
     func configureTextFieldStyle(_ textField: UITextField) {
         let bottomLine = CALayer()

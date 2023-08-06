@@ -34,42 +34,28 @@ class MainViewController: UIViewController {
 
         
     }
+        
+    
     
     func setupCollectionView() {
-        // 컬렉션뷰의 레이아웃을 담당하는 객체
         //let flowLayout = UICollectionViewFlowLayout()
         
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-        // 컬렉션뷰의 스크롤 방향 설정
         flowLayout.scrollDirection = .vertical
         
         let collectionCellWidth = (UIScreen.main.bounds.width - 1 * (3 - 1)) / 3
         
         flowLayout.itemSize = CGSize(width: collectionCellWidth, height: collectionCellWidth)
-        // 아이템 사이 간격 설정
         flowLayout.minimumInteritemSpacing = 1
-        // 아이템 위아래 사이 간격 설정
         flowLayout.minimumLineSpacing = 1
         flowLayout.sectionInset = UIEdgeInsets (top: 30, left: 0, bottom: 0, right: 0)
-
-        
-        // 컬렉션뷰의 속성에 할당
         collectionView.collectionViewLayout = flowLayout
         
-        
-        
-
-
     }
     
     
-    
-    
-    
-    
-    
-    
+
     
 }
 
@@ -109,11 +95,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             present(alertVC, animated: true, completion: nil)
         }
         
-        let detailStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let detailVC = (detailStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController) {
-            detailVC.selectedTamaName = selectedLabel
-            present(detailVC, animated: true, completion: nil)
-        }
+//        let detailStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let detailVC = (detailStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController) {
+//        detailVC.selectedTamaName = selectedLabel
+//        detailVC.selectedTamaImage = selectedImage
+//        present(detailVC, animated: true, completion: nil)
+//        }
     }
         
     

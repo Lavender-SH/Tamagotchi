@@ -16,16 +16,17 @@ class AlertViewController: UIViewController {
     var alertDetailImage: UIImage?
     var contentLabel: String? = "빈 공간"
     var contentText: String? = "빈 공간"
-   
     
     
     
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         alertImage?.image = alertDetailImage
         alertLabel.text = contentLabel
         alertTextView.text = contentText
+        
         
     }
     
@@ -45,6 +46,7 @@ class AlertViewController: UIViewController {
     
     
     @IBAction func startButton(_ sender: UIButton) {
+        print("ddd")
         sender.isSelected.toggle()
         if sender.isSelected {
             sender.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
@@ -52,17 +54,36 @@ class AlertViewController: UIViewController {
             sender.backgroundColor = UIColor.white
         }
         
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailVC.modalPresentationStyle = .fullScreen
-        detailVC.modalPresentationStyle = .overCurrentContext
-        present(detailVC, animated: true, completion: nil)
-        
         let alertVC = storyboard?.instantiateViewController(withIdentifier: "AlertViewController") as! AlertViewController
-        
         let nav = UINavigationController(rootViewController: alertVC)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
+        
+        
+        let detailStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let detailVC = (detailStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController) {
+            detailVC.modalPresentationStyle = .fullScreen
+            detailVC.modalPresentationStyle = .overCurrentContext
+            detailVC.selectedTamaName = contentLabel
+            detailVC.selectedTamaImage = alertDetailImage
+            present(detailVC, animated: true, completion: nil)
         }
+    }
+}
+        
+      //  let nav = UINavigationController(rootViewController: alertVC)
+      //  nav.modalPresentationStyle = .fullScreen
+        //nav.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: nil, action: nil)
+        //navigationItem.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: nil, action: nil)
+       // present(nav, animated: true, completion: nil)
+        
+//        let detailStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let detailVC = (detailStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController) {
+//            detailVC.selectedTamaName = contentLabel
+//            present(detailVC, animated: true, completion: nil)
+//        }
+        
+    
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
@@ -73,7 +94,7 @@ class AlertViewController: UIViewController {
 //        navigationController?.setNavigationBarHidden(false, animated: animated)
 //    }
     
-}
+
     
 
 
