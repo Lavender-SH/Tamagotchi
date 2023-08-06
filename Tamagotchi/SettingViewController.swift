@@ -67,7 +67,10 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        settingTableView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+       // navigationController?.navigationBar.barTintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+
         
         
     }
@@ -84,15 +87,19 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         switch indexPath.row {
         case 0:
-//            let nav = UINavigationController(rootViewController: SettingViewController())
-//                    navigationController.modalPresentationStyle = .fullScreen
-//                    present(nav, animated: true, completion: nil)
+            let apperance = UINavigationBarAppearance()
+            apperance.configureWithOpaqueBackground()
             
-//            navigationController?.popViewController(animated: true)
-//            detailVC.modalPresentationStyle = .fullScreen
-//            present(detailVC, animated: true, completion: nil)
+            navigationController?.navigationBar.tintColor = .lightGray
+            navigationController?.navigationBar.barTintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+            navigationController?.navigationBar.standardAppearance = apperance
+            navigationController?.navigationBar.compactAppearance = apperance
+            navigationController?.navigationBar.scrollEdgeAppearance = apperance
             nickVC.modalPresentationStyle = .fullScreen
-            present(nickVC, animated: true, completion: nil)
+            navigationController?.pushViewController(nickVC, animated: true)
+            navigationController?.popViewController(animated: true)
+            title = "대장님 이름 정하기"
+            //present(nickVC, animated: true, completion: nil)
             
         case 1: mainVC.modalPresentationStyle = .fullScreen
             mainVC.selctContentLabel = "다마고치 변경하기"

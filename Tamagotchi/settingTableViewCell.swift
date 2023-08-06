@@ -23,6 +23,7 @@ class settingTableViewCell: UITableViewCell {
         settingLabel.text = detailSettingLabel
         settingLabel.frame.origin.x = 30
         
+        
 
         
     }
