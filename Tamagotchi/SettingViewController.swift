@@ -54,11 +54,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         
-        //cell.detailSettingLabel = settingOption.showOption
+
         cell.textLabel?.textColor = .black
-        //cell.textLabel?.text = SettingOptions.setting.showOption
-        //cell.textLabel?.frame.origin.x = 100
-        //cell.settingLabel.frame.origin.x = 100
         cell.accessoryType = .disclosureIndicator
         
         
