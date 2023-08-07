@@ -42,6 +42,7 @@ class DetailViewController: UIViewController {
         configureButtonStyle(eatButton)
         configureButtonStyle(drinkButton)
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         tamagotchiImageView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         bubbleImage.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         //tamagotchiImageView.image = selectedTamaImage
@@ -54,16 +55,11 @@ class DetailViewController: UIViewController {
         tamaNameLabel.layer.borderWidth = 1.0
         tamaNameLabel.layer.borderColor = UIColor.lightGray.cgColor
         tamaNameLabel.layer.cornerRadius = 5.0
-        //selectedCall()
-        
+        navigationItem.title = UserDefaults.standard.string(forKey: "nickname") ?? ""+"님의 다마고치"
+
         
     }
-//    func selectedCall() {
-//        let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-//        let alertVC = storyboard?.instantiateViewController(withIdentifier: "AlertViewController") as! AlertViewController
-//        tamaNameLabel.text = alertVC.contentLabel
-//    }
-    
+
     func configureTextFieldStyle(_ textField: UITextField) {
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 1, width: textField.frame.width, height: 1)
@@ -71,6 +67,7 @@ class DetailViewController: UIViewController {
         textField.borderStyle = .none
         textField.layer.addSublayer(bottomLine)
     }
+    
     func configureButtonStyle(_ button: UIButton) {
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.black.cgColor

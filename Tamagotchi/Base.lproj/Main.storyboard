@@ -221,7 +221,7 @@
             </objects>
             <point key="canvasLocation" x="788.54961832061065" y="667.6056338028169"/>
         </scene>
-        <!--대장님의 다마고치-->
+        <!--Detail View Controller-->
         <scene sceneID="9NW-SQ-brO">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" modalPresentationStyle="fullScreen" id="hlD-4B-DiX" customClass="DetailViewController" customModule="Tamagotchi" customModuleProvider="target" sceneMemberID="viewController">
@@ -319,7 +319,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="대장님의 다마고치" id="da7-mZ-sC7">
+                    <navigationItem key="navigationItem" id="da7-mZ-sC7">
                         <barButtonItem key="backBarButtonItem" title=" " id="ljw-It-d0H"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.crop.circle" catalog="system" id="0S6-cY-ftp">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,15 +364,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HBp-Bi-wSO">
-                                                    <rect key="frame" x="59" y="24" width="25" height="14.333333333333334"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HBp-Bi-wSO">
+                                                    <rect key="frame" x="59" y="19" width="37.666666666666664" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kPW-EO-UMI">
-                                                    <rect key="frame" x="340.33333333333331" y="24" width="32.666666666666664" height="14.333333333333334"/>
+                                                    <rect key="frame" x="340.33333333333331" y="26.999999999999996" width="32.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -472,6 +472,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="저장" id="deW-Yu-Eih">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="pQT-t5-OT8" id="aGZ-CT-ZQR"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

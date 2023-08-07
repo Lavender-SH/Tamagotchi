@@ -36,23 +36,27 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         switch settingOption {
         case .setting:
-            cell.iconImage.image = UIImage(systemName: "pencil")!
-            cell.iconImage.tintColor = .lightGray
-           // cell.textLabel?.text = SettingOptions.showOption.setting
+            cell.imageView?.image = UIImage(systemName: "pencil")!
+            cell.imageView?.tintColor = .lightGray
+            cell.textLabel?.text = SettingOptions.setting.showOption
+            cell.detailTextLabel?.text = UserDefaults.standard.string(forKey: "nickname")
         case .change:
-            cell.iconImage.image = UIImage(systemName: "moon.fill")!
-            cell.iconImage.tintColor = .lightGray
-            //cell.detailSettingLabel = "다마고치 변경하기"
+            cell.imageView?.image = UIImage(systemName: "moon.fill")!
+            cell.imageView?.tintColor = .lightGray
+            cell.textLabel?.text = SettingOptions.change.showOption
+            cell.detailTextLabel?.text = ""
+            
         case .reset:
-            cell.iconImage.image = UIImage(systemName: "arrow.clockwise")!
-            cell.iconImage.tintColor = .lightGray
-            //cell.detailSettingLabel = "데이터 초기화"
+            cell.imageView?.image = UIImage(systemName: "arrow.clockwise")!
+            cell.imageView?.tintColor = .lightGray
+            cell.textLabel?.text = SettingOptions.reset.showOption
+            cell.detailTextLabel?.text = ""
         }
         
         
         //cell.detailSettingLabel = settingOption.showOption
         cell.textLabel?.textColor = .black
-        cell.textLabel?.text = SettingOptions.setting.showOption
+        //cell.textLabel?.text = SettingOptions.setting.showOption
         //cell.textLabel?.frame.origin.x = 100
         //cell.settingLabel.frame.origin.x = 100
         cell.accessoryType = .disclosureIndicator
@@ -70,7 +74,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         settingTableView.dataSource = self
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         settingTableView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-       // navigationController?.navigationBar.barTintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
 
         
         
@@ -98,7 +102,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             navigationController?.navigationBar.scrollEdgeAppearance = apperance
             nickVC.modalPresentationStyle = .fullScreen
             navigationController?.pushViewController(nickVC, animated: true)
-           // navigationController?.popViewController(animated: true)
+            //navigationController?.popViewController(animated: true)
             title = "대장님 이름 정하기"
             //present(nickVC, animated: true, completion: nil)
             
