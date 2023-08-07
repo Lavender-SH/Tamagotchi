@@ -111,7 +111,11 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             present(mainVC, animated: true, completion: nil)
         case 2:
             let alertController = UIAlertController(title: "데이터 초기화", message: "정말 다시 처음부터 시작하실 건가용?", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "웅", style: .default, handler: nil)
+            let okAction = UIAlertAction(title: "웅", style: .destructive) { _ in
+                if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                    UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
+                }
+            }
             let cancelAction = UIAlertAction(title: "아냐!", style: .cancel, handler: nil)
 
             alertController.addAction(cancelAction)
@@ -126,3 +130,4 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
 }
+
