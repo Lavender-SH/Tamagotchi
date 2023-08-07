@@ -24,6 +24,7 @@ class settingTableViewCell: UITableViewCell {
         settingLabel.frame.origin.x = 30
         
         
+        
 
         
     }

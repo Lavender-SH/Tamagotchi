@@ -68,16 +68,20 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         var selectedImage: UIImage?
         var selectedLabel = ""
         var selectedText = ""
+        var indexP = 0
         
             if indexPath.row == 0 {
+                indexP = indexPath.row + 1
                 selectedImage = UIImage(named: "1-6")
                 selectedLabel = "따끔따끔 다마고치"
                 selectedText = "저는 선인장 다마고치입니다. 키는 2cm 몸무게는 150g 이에요. 성격은 소심하지만 마음은 따뜻해요. 열심히 잘 먹고 잘 클 자신은 있답니다. 반가워요 주인님~:) "
             } else if indexPath.row == 1 {
+                indexP = indexPath.row + 1
                 selectedImage = UIImage(named: "2-6")
                 selectedLabel = "방실방실 다마고치"
                 selectedText = "저는 방실방실 다마고치입니당! 키는 100km 몸무게는 150톤이에용! 성격은 화끈하고 날라다닙니당! 열심히 잘 먹고 잘 클 자신은 있답니당! 방실방실!"
             } else if indexPath.row == 2 {
+                indexP = indexPath.row + 1
                 selectedImage = UIImage(named: "3-6")
                 selectedLabel = "반짝반짝 다마고치"
                 selectedText = "저는 반짝반짝 다마고치에요~ 키는 120cm 몸무게는 120g이에요~ 성격도 반짝반짝 시원시원 해요~ 저를 키워주세요~ 잘 먹고 잘 커볼게요~"
@@ -92,6 +96,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             alertVC.alertDetailImage = selectedImage
             alertVC.contentLabel = selectedLabel
             alertVC.contentText = selectedText
+            alertVC.indexPX = indexP
             present(alertVC, animated: true, completion: nil)
         }
         
