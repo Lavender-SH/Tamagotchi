@@ -77,39 +77,94 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func eatRiceBallButtonPressed(_ sender: UIButton) {
-        if let inputText = riceBallTextField.text, let amount = Int(inputText) {
-            if amount >= 1 && amount <= 99 {
+        do {
+            try processFoodInput(textField: riceBallTextField, maxAmount: 99, action: { amount in
                 riceBallCount += amount
                 updateLevelAndImages()
-            } else {
-                showAlert(message: "1개 이상 99개 이하로 입력해주세요.")
-            }
-        } else {
-            riceBallCount += 1
-            updateLevelAndImages()
+            })
+            setRandomFoodString()
+        } catch let error {
+            showAlert(message: error.localizedDescription)
         }
+        
+//        if let inputText = riceBallTextField.text, let amount = Int(inputText) {
+//            if amount >= 1 && amount <= 99 {
+//                riceBallCount += amount
+//                updateLevelAndImages()
+//            } else {
+//                showAlert(message: "1개 이상 99개 이하로 입력해주세요.")
+//            }
+//        } else {
+//            riceBallCount += 1
+//            updateLevelAndImages()
+//        }
+//        let randomFoodIndex = Int.random(in: 0..<foodStrings.count)
+//        let randomFoodString = foodStrings[randomFoodIndex]
+//        bubbleLabel.text = randomFoodString
+    }
+    
+    @IBAction func drinkWaterButtonPressed(_ sender: UIButton) {
+        do {
+            try processFoodInput(textField: waterDropTextField, maxAmount: 49, action: { amount in
+                waterDropCount += amount
+                updateLevelAndImages()
+            })
+            setRandomWaterString()
+        } catch let error {
+            showAlert(message: error.localizedDescription)
+        }
+        
+//        if let inputText = waterDropTextField.text, let amount = Int(inputText) {
+//            if amount >= 1 && amount <= 49 {
+//                waterDropCount += amount
+//                updateLevelAndImages()
+//            } else {
+//                showAlert(message: "1개 이상 49개 이하로 입력해주세요.")
+//            }
+//        } else {
+//            waterDropCount += 1
+//            updateLevelAndImages()
+//        }
+//        let randomWaterIndex = Int.random(in: 0..<waterStrings.count)
+//        let randomWaterString = waterStrings[randomWaterIndex]
+//        bubbleLabel.text = randomWaterString
+        
+    }
+
+    func processFoodInput(textField: UITextField, maxAmount: Int, action: (Int) -> Void) throws {
+        if let inputText = textField.text, let amount = Int(inputText) {
+            guard amount >= 1 && amount <= maxAmount else {
+                throw FoodError.invalidAmount
+            }
+            action(amount)
+        } else {
+            action(1)
+        }
+    }
+
+    enum FoodError: Error {
+        case invalidAmount
+        
+        var localizedDescription: String {
+            switch self {
+            case .invalidAmount:
+                return "올바른 개수를 입력하세요."
+            }
+        }
+    }
+
+    func setRandomFoodString() {
         let randomFoodIndex = Int.random(in: 0..<foodStrings.count)
         let randomFoodString = foodStrings[randomFoodIndex]
         bubbleLabel.text = randomFoodString
     }
-    
-    @IBAction func drinkWaterButtonPressed(_ sender: UIButton) {
-        if let inputText = waterDropTextField.text, let amount = Int(inputText) {
-            if amount >= 1 && amount <= 49 {
-                waterDropCount += amount
-                updateLevelAndImages()
-            } else {
-                showAlert(message: "1개 이상 49개 이하로 입력해주세요.")
-            }
-        } else {
-            waterDropCount += 1
-            updateLevelAndImages()
-        }
+
+    func setRandomWaterString() {
         let randomWaterIndex = Int.random(in: 0..<waterStrings.count)
         let randomWaterString = waterStrings[randomWaterIndex]
         bubbleLabel.text = randomWaterString
-        
     }
+
     
     func updateLevelAndImages() {
         let riceBallValue = riceBallCount / 5

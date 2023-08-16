@@ -7,6 +7,17 @@
 
 import UIKit
 
+enum NicknameError: Error {
+    case emptyNickname
+    
+    var localizedDescription: String {
+        switch self {
+        case .emptyNickname:
+            return "닉네임을 입력하세요."
+        }
+    }
+}
+
 class nicknameViewController: UIViewController {
     
     
@@ -23,26 +34,48 @@ class nicknameViewController: UIViewController {
         configureTextFieldStyle(nicknameTextField)
     }
     
-    
+   
     @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
         
         
         navigationController?.popViewController(animated: true)
     }
-    
+    //==================================================================================
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        do {
+            try saveNickname()
+            navigationController?.popViewController(animated: true)
+        } catch let error {
+            showAlert(message: error.localizedDescription)
+        }
+//        guard let nickname = nicknameTextField.text, !nickname.isEmpty else {
+//            return
+//        }
+//
+//        UserDefaults.standard.set(nickname, forKey: "nickname")
+//
+//        UserDefaults.standard.synchronize()
+//
+//        navigationController?.popViewController(animated: true)
+    }
+    func saveNickname() throws {
         guard let nickname = nicknameTextField.text, !nickname.isEmpty else {
-            return
+            throw NicknameError.emptyNickname
         }
         
         UserDefaults.standard.set(nickname, forKey: "nickname")
-        
         UserDefaults.standard.synchronize()
-        
-        navigationController?.popViewController(animated: true)
-        
     }
-    
+
+
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    //====================================================================================
+
     func loadNickname() {
         if let savedNickname = UserDefaults.standard.string(forKey: "userNickname") {
             nicknameTextField.text = savedNickname
