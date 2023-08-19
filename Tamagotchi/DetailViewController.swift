@@ -77,30 +77,48 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func eatRiceBallButtonPressed(_ sender: UIButton) {
-        do {
-            try processFoodInput(textField: riceBallTextField, maxAmount: 99, action: { amount in
-                riceBallCount += amount
-                updateLevelAndImages()
-            })
-            setRandomFoodString()
-        } catch let error {
-            showAlert(message: error.localizedDescription)
-        }
-        
-//        if let inputText = riceBallTextField.text, let amount = Int(inputText) {
-//            if amount >= 1 && amount <= 99 {
+        // MARK: - do/catch 수정
+//        do {
+//            try processFoodInput(textField: riceBallTextField, maxAmount: 99, action: { amount in
 //                riceBallCount += amount
 //                updateLevelAndImages()
-//            } else {
-//                showAlert(message: "1개 이상 99개 이하로 입력해주세요.")
-//            }
-//        } else {
-//            riceBallCount += 1
-//            updateLevelAndImages()
+//
+//            })
+//            setRandomFoodString()
+//        } catch let error {
+//            showAlert(message: error.localizedDescription)
 //        }
-//        let randomFoodIndex = Int.random(in: 0..<foodStrings.count)
-//        let randomFoodString = foodStrings[randomFoodIndex]
-//        bubbleLabel.text = randomFoodString
+        
+        // MARK: - 기존 코드
+        if let inputText = riceBallTextField.text, let amount = Int(inputText) {
+            if amount >= 1 && amount <= 99 {
+                riceBallCount += amount
+                updateLevelAndImages()
+            } else {
+                showAlert(message: "1개 이상 99개 이하로 입력해주세요.")
+            }
+        } else {
+            riceBallCount += 1
+            updateLevelAndImages()
+        }
+        let randomFoodIndex = Int.random(in: 0..<foodStrings.count)
+        let randomFoodString = foodStrings[randomFoodIndex]
+        bubbleLabel.text = randomFoodString
+        
+        // MARK: - 알림창
+        let content = UNMutableNotificationContent()
+        content.title = "다마고치에게 밥과 물을 주세요"
+        content.body = "배고프다고요. 밥과 물을 주세요!!"
+        content.badge = 100
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            print(error)
+        }
+        
     }
     
     @IBAction func drinkWaterButtonPressed(_ sender: UIButton) {
