@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02204F9F2A93802B005A02FA /* drinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02204F9E2A93802B005A02FA /* drinkButton.swift */; };
+		02204FA12A938049005A02FA /* eatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02204FA02A938049005A02FA /* eatButton.swift */; };
 		02F4CE702A7CB9A9001018DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE6F2A7CB9A9001018DF /* AppDelegate.swift */; };
 		02F4CE722A7CB9A9001018DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE712A7CB9A9001018DF /* SceneDelegate.swift */; };
 		02F4CE742A7CB9A9001018DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4CE732A7CB9A9001018DF /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02204F9E2A93802B005A02FA /* drinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinkButton.swift; sourceTree = "<group>"; };
+		02204FA02A938049005A02FA /* eatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eatButton.swift; sourceTree = "<group>"; };
 		02F4CE6C2A7CB9A9001018DF /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F4CE6F2A7CB9A9001018DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F4CE712A7CB9A9001018DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				02F4CE872A7D20B6001018DF /* AlertViewController.swift */,
 				02F4CE852A7CC602001018DF /* MainViewController.swift */,
 				02F4CE832A7CC370001018DF /* MainCollectionViewCell.swift */,
+				02204F9E2A93802B005A02FA /* drinkButton.swift */,
+				02204FA02A938049005A02FA /* eatButton.swift */,
 				02F4CE782A7CB9AA001018DF /* Assets.xcassets */,
 				02F4CE7A2A7CB9AA001018DF /* LaunchScreen.storyboard */,
 				02F4CE7D2A7CB9AA001018DF /* Info.plist */,
@@ -163,8 +169,10 @@
 				02F4CE702A7CB9A9001018DF /* AppDelegate.swift in Sources */,
 				02F4CE722A7CB9A9001018DF /* SceneDelegate.swift in Sources */,
 				02F4CE8C2A7E1C39001018DF /* SettingViewController.swift in Sources */,
+				02204FA12A938049005A02FA /* eatButton.swift in Sources */,
 				02F4CE902A7E90AE001018DF /* nicknameViewController.swift in Sources */,
 				02F4CE882A7D20B6001018DF /* AlertViewController.swift in Sources */,
+				02204F9F2A93802B005A02FA /* drinkButton.swift in Sources */,
 				02F4CE8E2A7E28E4001018DF /* settingTableViewCell.swift in Sources */,
 				02F4CE842A7CC370001018DF /* MainCollectionViewCell.swift in Sources */,
 				02F4CE862A7CC602001018DF /* MainViewController.swift in Sources */,
