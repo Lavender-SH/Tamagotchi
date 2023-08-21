@@ -123,8 +123,8 @@
                                             <constraint firstAttribute="width" secondItem="dhF-9G-vNg" secondAttribute="height" multiplier="1:1" id="Zfd-uc-cDS"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqc-Mp-Atl">
-                                        <rect key="frame" x="70" y="202" width="157" height="20.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다마고치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqc-Mp-Atl">
+                                        <rect key="frame" x="119" y="202" width="59" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -140,6 +140,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-6g-7WQ">
                                         <rect key="frame" x="0.0" y="376" width="149" height="43"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="kmK-6g-7WQ" secondAttribute="height" multiplier="149:43" id="OPG-Ay-rRF"/>
                                             <constraint firstAttribute="width" constant="149" id="ZOu-w0-gpP"/>
                                         </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,6 +163,7 @@
                                         <rect key="frame" x="148" y="376" width="149" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="149" id="idu-1b-OhT"/>
+                                            <constraint firstAttribute="width" secondItem="Fit-2t-lvV" secondAttribute="height" multiplier="149:43" id="zem-it-IWS"/>
                                         </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -189,14 +191,15 @@
                                     <constraint firstItem="dhF-9G-vNg" firstAttribute="centerX" secondItem="zuh-Jl-04a" secondAttribute="centerX" id="Jsv-j5-ed2"/>
                                     <constraint firstItem="Fit-2t-lvV" firstAttribute="top" secondItem="1B5-AL-2Z3" secondAttribute="bottom" constant="20" id="Pkf-JK-LSK"/>
                                     <constraint firstItem="dqc-Mp-Atl" firstAttribute="top" secondItem="dhF-9G-vNg" secondAttribute="bottom" constant="5" id="QGp-oD-zFZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="dqc-Mp-Atl" secondAttribute="trailing" constant="70" id="Scd-Ag-F5q"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dqc-Mp-Atl" secondAttribute="trailing" constant="70" id="Scd-Ag-F5q"/>
                                     <constraint firstAttribute="trailing" secondItem="1B5-AL-2Z3" secondAttribute="trailing" constant="20" id="TbA-Oz-bzr"/>
                                     <constraint firstAttribute="bottom" secondItem="kmK-6g-7WQ" secondAttribute="bottom" id="bUq-gg-hyy"/>
-                                    <constraint firstItem="dqc-Mp-Atl" firstAttribute="leading" secondItem="zuh-Jl-04a" secondAttribute="leading" constant="70" id="hHC-YP-K8w"/>
+                                    <constraint firstItem="dqc-Mp-Atl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zuh-Jl-04a" secondAttribute="leading" constant="70" id="hHC-YP-K8w"/>
                                     <constraint firstAttribute="trailing" secondItem="Fit-2t-lvV" secondAttribute="trailing" id="i6z-QM-YmS"/>
                                     <constraint firstItem="1B5-AL-2Z3" firstAttribute="top" secondItem="dqc-Mp-Atl" secondAttribute="bottom" constant="10" id="lDj-wy-ncI"/>
                                     <constraint firstAttribute="bottom" secondItem="Fit-2t-lvV" secondAttribute="bottom" id="mKY-Jz-ajA"/>
                                     <constraint firstItem="kmK-6g-7WQ" firstAttribute="leading" secondItem="zuh-Jl-04a" secondAttribute="leading" id="s39-Rx-03q"/>
+                                    <constraint firstItem="dqc-Mp-Atl" firstAttribute="centerX" secondItem="zuh-Jl-04a" secondAttribute="centerX" id="wK3-Va-i2n"/>
                                     <constraint firstItem="dhF-9G-vNg" firstAttribute="top" secondItem="zuh-Jl-04a" secondAttribute="top" constant="40" id="ycd-jL-3Kq"/>
                                 </constraints>
                             </view>
