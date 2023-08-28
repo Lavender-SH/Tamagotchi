@@ -4,7 +4,6 @@
 //
 //  Created by 이승현 on 2023/08/05.
 //
-
 import UIKit
 
 enum SettingOptions: Int, CaseIterable {
@@ -19,49 +18,11 @@ enum SettingOptions: Int, CaseIterable {
     }
 }
 
-class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingViewController: UIViewController {
     
     @IBOutlet weak var settingTableView: UITableView!
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingTableViewCell") as! settingTableViewCell
-        let settingOption = SettingOptions.allCases[indexPath.row]
-
-        
-        
-        switch settingOption {
-        case .setting:
-            cell.imageView?.image = UIImage(systemName: "pencil")!
-            cell.imageView?.tintColor = .lightGray
-            cell.textLabel?.text = SettingOptions.setting.showOption
-            cell.detailTextLabel?.text = UserDefaults.standard.string(forKey: "nickname")
-        case .change:
-            cell.imageView?.image = UIImage(systemName: "moon.fill")!
-            cell.imageView?.tintColor = .lightGray
-            cell.textLabel?.text = SettingOptions.change.showOption
-            cell.detailTextLabel?.text = ""
-            
-        case .reset:
-            cell.imageView?.image = UIImage(systemName: "arrow.clockwise")!
-            cell.imageView?.tintColor = .lightGray
-            cell.textLabel?.text = SettingOptions.reset.showOption
-            cell.detailTextLabel?.text = ""
-        }
-        
-        
-
-        cell.textLabel?.textColor = .black
-        cell.accessoryType = .disclosureIndicator
-        
-        
-        return cell
-        
-    }
+    var nicknameBox: String?
     
     
     override func viewDidLoad() {
@@ -72,10 +33,20 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         settingTableView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-
-        
-        
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(selectNicknameNotificationObserver), name: NSNotification.Name("nickName"), object: nil)
+        settingTableView.reloadData()
     }
+    
+    @objc func selectNicknameNotificationObserver(notification: NSNotification) {
+        if let nickName = (notification.userInfo?["nickname"] ?? "") as? String {
+            
+                print(nickName)
+                self.nicknameBox = nickName
+            
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
@@ -114,17 +85,50 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
             let cancelAction = UIAlertAction(title: "아냐!", style: .cancel, handler: nil)
-
             alertController.addAction(cancelAction)
             alertController.addAction(okAction)
-            
             present(alertController, animated: true, completion: nil)
-            
         default: break
         }
-        
-        
-        
     }
+    
 }
 
+extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "settingTableViewCell") as! settingTableViewCell
+        let settingOption = SettingOptions.allCases[indexPath.row]
+        
+        
+        switch settingOption {
+        case .setting:
+            cell.imageView?.image = UIImage(systemName: "pencil")!
+            cell.imageView?.tintColor = .lightGray
+            cell.textLabel?.text = SettingOptions.setting.showOption
+            print(nicknameBox, "===5==")
+            cell.detailTextLabel?.text = nicknameBox
+            //cell.detailTextLabel?.text = UserDefaults.standard.string(forKey: "nickname")
+        case .change:
+            cell.imageView?.image = UIImage(systemName: "moon.fill")!
+            cell.imageView?.tintColor = .lightGray
+            cell.textLabel?.text = SettingOptions.change.showOption
+            cell.detailTextLabel?.text = ""
+            
+        case .reset:
+            cell.imageView?.image = UIImage(systemName: "arrow.clockwise")!
+            cell.imageView?.tintColor = .lightGray
+            cell.textLabel?.text = SettingOptions.reset.showOption
+            cell.detailTextLabel?.text = ""
+        }
+        cell.textLabel?.textColor = .black
+        cell.accessoryType = .disclosureIndicator
+        
+        return cell
+    }
+    
+}

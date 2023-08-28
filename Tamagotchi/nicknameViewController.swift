@@ -63,8 +63,10 @@ class nicknameViewController: UIViewController {
             throw NicknameError.emptyNickname
         }
         
-        UserDefaults.standard.set(nickname, forKey: "nickname")
-        UserDefaults.standard.synchronize()
+        //UserDefaults.standard.set(nickname, forKey: "nickname")
+        //UserDefaults.standard.synchronize()
+        // NSNotification.Name("nickName") 채널 /  userInfo: ["nickname": nickname] 키값
+        NotificationCenter.default.post(name: NSNotification.Name("nickName"), object: nil, userInfo: ["nickname": nickname])
     }
 
 
@@ -92,4 +94,6 @@ class nicknameViewController: UIViewController {
     
 
 }
+
+
 

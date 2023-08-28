@@ -124,14 +124,17 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다마고치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqc-Mp-Atl">
-                                        <rect key="frame" x="119" y="202" width="59" height="20.333333333333343"/>
+                                        <rect key="frame" x="119" y="202" width="59" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1B5-AL-2Z3">
-                                        <rect key="frame" x="20" y="232.33333333333329" width="257" height="123.66666666666666"/>
+                                        <rect key="frame" x="20" y="233" width="257" height="123"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1B5-AL-2Z3" secondAttribute="height" multiplier="257:123" id="tDE-7E-2md"/>
+                                        </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -193,6 +196,7 @@
                                     <constraint firstItem="dqc-Mp-Atl" firstAttribute="top" secondItem="dhF-9G-vNg" secondAttribute="bottom" constant="5" id="QGp-oD-zFZ"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dqc-Mp-Atl" secondAttribute="trailing" constant="70" id="Scd-Ag-F5q"/>
                                     <constraint firstAttribute="trailing" secondItem="1B5-AL-2Z3" secondAttribute="trailing" constant="20" id="TbA-Oz-bzr"/>
+                                    <constraint firstItem="1B5-AL-2Z3" firstAttribute="width" secondItem="zuh-Jl-04a" secondAttribute="width" multiplier="0.86532" id="bAx-t4-xkh"/>
                                     <constraint firstAttribute="bottom" secondItem="kmK-6g-7WQ" secondAttribute="bottom" id="bUq-gg-hyy"/>
                                     <constraint firstItem="dqc-Mp-Atl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zuh-Jl-04a" secondAttribute="leading" constant="70" id="hHC-YP-K8w"/>
                                     <constraint firstAttribute="trailing" secondItem="Fit-2t-lvV" secondAttribute="trailing" id="i6z-QM-YmS"/>

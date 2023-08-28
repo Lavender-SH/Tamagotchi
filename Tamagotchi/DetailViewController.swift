@@ -35,7 +35,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         print("======")
-        tamaNameLabel.text = UserDefaults.standard.string(forKey: "name\(index)")
+        //tamaNameLabel.text = UserDefaults.standard.string(forKey: "name\(index)")
+    
         
         configureTextFieldStyle(riceBallTextField)
         configureTextFieldStyle(waterDropTextField)
@@ -49,16 +50,29 @@ class DetailViewController: UIViewController {
         tamaNameLabel.text = selectedTamaName
         print(selectedTamaName)
         tamagotchiImageView.image = UIImage(named: "1-1")
-        //tamaNameLabel.text = "따끔따끔 다마고치"
+        tamaNameLabel.text = "따끔따끔 다마고치"
         levelLabel.text = "LV1 밥알 0개 물방울 0개"
         bubbleLabel.text = "오늘은 왠지 기분이 좋아용"
         tamaNameLabel.layer.borderWidth = 1.0
         tamaNameLabel.layer.borderColor = UIColor.lightGray.cgColor
         tamaNameLabel.layer.cornerRadius = 5.0
-        navigationItem.title = UserDefaults.standard.string(forKey: "nickname") ?? ""+"님의 다마고치"
+        //navigationItem.title = UserDefaults.standard.string(forKey: "nickname") ?? ""+"님의 다마고치"
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(selectNicknameNotificationObserver), name: NSNotification.Name("nickName"), object: nil)
     }
+    
+    @objc func selectNicknameNotificationObserver(notification: NSNotification) {
+        
+        if let nickName = (notification.userInfo?["nickname"] ?? "") as? String {
+            DispatchQueue.main.async {
+                print(nickName)
+                self.navigationItem.title = nickName
+            }
+            
+        }
+    }
+    
+    
     
     func configureTextFieldStyle(_ textField: UITextField) {
         let bottomLine = CALayer()
@@ -111,7 +125,7 @@ class DetailViewController: UIViewController {
         content.body = "배고프다고요. 밥과 물을 주세요!!"
         content.badge = 100
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: false)
         
         let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
         
